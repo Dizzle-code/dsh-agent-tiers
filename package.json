@@ -1,0 +1,37 @@
+{
+  "name": "dsh-agent-tiers",
+  "version": "0.1.0",
+  "description": "Four ready-made DeepSeek Harness agent presets: Creator, Coding Extra Tools, Coding Normal and Coding Minimal",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "dsh",
+    "agent-preset"
+  ],
+  "files": [
+    "tiers",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": [
+        "./tiers/creator/cordis.patch.yml",
+        "./tiers/coding-extra/cordis.patch.yml",
+        "./tiers/coding-normal/cordis.patch.yml",
+        "./tiers/coding-minimal/cordis.patch.yml"
+      ]
+    }
+  },
+  "engines": {
+    "node": ">=22.18",
+    "dsh": "0.2.2-rc.3 || 0.2.2-rc.5"
+  },
+  "scripts": {
+    "generate": "node scripts/generate.ts",
+    "check": "node scripts/check-compat.ts"
+  }
+}
